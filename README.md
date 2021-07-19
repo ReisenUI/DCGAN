@@ -1,12 +1,13 @@
-<center><font size="5">浙江大学暑期夏令营学习笔记</font></center>
+# <div align=center>浙江大学暑期夏令营学习笔记</div>
+
 
 <br/>
-<center>作者：黄毓儒</center>
-<center>本科院校：浙江工商大学</center>
-<center>专业：计算机科学与技术</center>
+<div align=center>作者：黄毓儒</div>
+<div align=center>本科院校：浙江工商大学</div>
+<div align=center>专业：计算机科学与技术</div>
 
 <br/>
-<center><font size="3">前言</font><br/></center><font size="2">
+<div align=center>前言</div>
 &emsp;&emsp;本文档用以记录浙江大学暑期夏令营期间项目扩展的学习经历，由于本科期间项目是在百度飞桨AI Studio上实现的GANs网络生成图片的应用，代码并非完全参透且实验效果不好，<strong>故从零开始学习PyTorch以及阅读GAN和DCGAN论文并进行实验，期间对比了两者之间的联系与区别，并从DCGAN开始进一步完成选题——DCGAN网络生成图片实验。</strong></font>
 <br/><br/>
 
