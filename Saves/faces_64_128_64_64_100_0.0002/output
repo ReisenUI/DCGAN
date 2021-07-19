@@ -1,0 +1,858 @@
+Generator(
+  (main): Sequential(
+    (0): ConvTranspose2d(100, 512, kernel_size=(4, 4), stride=(1, 1), bias=False)
+    (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): ConvTranspose2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (4): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+    (6): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (7): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): ReLU(inplace=True)
+    (9): ConvTranspose2d(128, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (10): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (11): ReLU(inplace=True)
+    (12): ConvTranspose2d(64, 3, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (13): Tanh()
+  )
+)
+Discriminator(
+  (main): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (1): LeakyReLU(negative_slope=0.2, inplace=True)
+    (2): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (3): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (4): LeakyReLU(negative_slope=0.2, inplace=True)
+    (5): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (6): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (7): LeakyReLU(negative_slope=0.2, inplace=True)
+    (8): Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(512, 1, kernel_size=(4, 4), stride=(1, 1), bias=False)
+    (12): Sigmoid()
+  )
+)
+config:
+n_epochs : 5
+batch_size : 128
+workers : 2
+lr : 0.0002
+b1 : 0.5
+n_cpu : 8
+n_gpu : 1
+latent_z : 100
+img_size : 64
+channels : 3
+G_feature : 64
+D_feature : 64
+fake_label : 0
+real_label : 1
+load_check : False
+[0/5]	[0/1990]	 Loss_D:2.1730127334594727	 Loss_G:2.603719711303711	 D(x):0.2743798494338989	 D(G(z)):0.4046609401702881/0.1025194376707077	 take_time:78.12362957000732
+Generator(
+  (main): Sequential(
+    (0): ConvTranspose2d(100, 512, kernel_size=(4, 4), stride=(1, 1), bias=False)
+    (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): ConvTranspose2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (4): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+    (6): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (7): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): ReLU(inplace=True)
+    (9): ConvTranspose2d(128, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (10): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (11): ReLU(inplace=True)
+    (12): ConvTranspose2d(64, 3, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (13): Tanh()
+  )
+)
+Discriminator(
+  (main): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (1): LeakyReLU(negative_slope=0.2, inplace=True)
+    (2): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (3): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (4): LeakyReLU(negative_slope=0.2, inplace=True)
+    (5): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (6): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (7): LeakyReLU(negative_slope=0.2, inplace=True)
+    (8): Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(512, 1, kernel_size=(4, 4), stride=(1, 1), bias=False)
+    (12): Sigmoid()
+  )
+)
+config:
+n_epochs : 5
+batch_size : 128
+workers : 2
+lr : 0.0002
+b1 : 0.5
+n_cpu : 8
+n_gpu : 1
+latent_z : 100
+img_size : 64
+channels : 3
+G_feature : 64
+D_feature : 64
+fake_label : 0
+real_label : 1
+load_check : False
+[0/5]	[0/407]	 Loss_D:1.9463772773742676	 Loss_G:2.3562498092651367	 D(x):0.2767743170261383	 D(G(z)):0.32166463136672974/0.13567519187927246	 take_time:51.96796989440918
+Generator(
+  (main): Sequential(
+    (0): ConvTranspose2d(100, 512, kernel_size=(4, 4), stride=(1, 1), bias=False)
+    (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): ConvTranspose2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (4): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+    (6): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (7): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): ReLU(inplace=True)
+    (9): ConvTranspose2d(128, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (10): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (11): ReLU(inplace=True)
+    (12): ConvTranspose2d(64, 3, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (13): Tanh()
+  )
+)
+Discriminator(
+  (main): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (1): LeakyReLU(negative_slope=0.2, inplace=True)
+    (2): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (3): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (4): LeakyReLU(negative_slope=0.2, inplace=True)
+    (5): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (6): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (7): LeakyReLU(negative_slope=0.2, inplace=True)
+    (8): Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(512, 1, kernel_size=(4, 4), stride=(1, 1), bias=False)
+    (12): Sigmoid()
+  )
+)
+config:
+n_epochs : 5
+batch_size : 128
+workers : 2
+lr : 0.0002
+b1 : 0.5
+n_cpu : 8
+n_gpu : 1
+latent_z : 100
+img_size : 64
+channels : 3
+G_feature : 64
+D_feature : 64
+fake_label : 0
+real_label : 1
+load_check : False
+[0/5]	[0/407]	 Loss_D:2.161754608154297	 Loss_G:1.9675407409667969	 D(x):0.22009657323360443	 D(G(z)):0.3077257573604584/0.17951583862304688	 take_time:39.24854135513306
+[0/5]	[200/407]	 Loss_D:0.5116437673568726	 Loss_G:4.104940414428711	 D(x):0.8170902729034424	 D(G(z)):0.16657426953315735/0.026473451405763626	 take_time:121.39942049980164
+[0/5]	[400/407]	 Loss_D:0.6766415238380432	 Loss_G:7.254833221435547	 D(x):0.8671125173568726	 D(G(z)):0.33636799454689026/0.0016681256238371134	 take_time:202.926287651062
+[1/5]	[0/407]	 Loss_D:0.41075143218040466	 Loss_G:2.853285312652588	 D(x):0.7578136920928955	 D(G(z)):0.014686615206301212/0.09977825731039047	 take_time:205.58527636528015
+[1/5]	[200/407]	 Loss_D:0.2215753197669983	 Loss_G:4.629255294799805	 D(x):0.8458399772644043	 D(G(z)):0.007607697043567896/0.016606414690613747	 take_time:287.1995921134949
+[1/5]	[400/407]	 Loss_D:0.33144068717956543	 Loss_G:3.112060546875	 D(x):0.8748456835746765	 D(G(z)):0.13926738500595093/0.06562802195549011	 take_time:369.00596809387207
+[2/5]	[0/407]	 Loss_D:0.6783320307731628	 Loss_G:4.395595073699951	 D(x):0.7890847325325012	 D(G(z)):0.25994622707366943/0.025625843554735184	 take_time:371.60269474983215
+[2/5]	[200/407]	 Loss_D:1.9890064001083374	 Loss_G:3.151170253753662	 D(x):0.26376062631607056	 D(G(z)):0.0021744845435023308/0.11673499643802643	 take_time:456.77891635894775
+[2/5]	[400/407]	 Loss_D:0.5762190818786621	 Loss_G:6.515504837036133	 D(x):0.8647564053535461	 D(G(z)):0.2744642496109009/0.0031600745860487223	 take_time:545.0575549602509
+[3/5]	[0/407]	 Loss_D:0.44005897641181946	 Loss_G:3.727644920349121	 D(x):0.7616810202598572	 D(G(z)):0.08369176089763641/0.05005750060081482	 take_time:547.816736459732
+[3/5]	[200/407]	 Loss_D:0.5350874066352844	 Loss_G:5.067890644073486	 D(x):0.8274422883987427	 D(G(z)):0.23032739758491516/0.011428026482462883	 take_time:635.8933911323547
+[3/5]	[400/407]	 Loss_D:0.48150843381881714	 Loss_G:5.117678642272949	 D(x):0.9148685932159424	 D(G(z)):0.27341344952583313/0.015596677549183369	 take_time:724.1014757156372
+[4/5]	[0/407]	 Loss_D:0.23379987478256226	 Loss_G:3.784928321838379	 D(x):0.9044618010520935	 D(G(z)):0.10843689739704132/0.035346854478120804	 take_time:726.8967523574829
+[4/5]	[200/407]	 Loss_D:0.30878713726997375	 Loss_G:4.204139232635498	 D(x):0.8649591207504272	 D(G(z)):0.12435203045606613/0.026786502450704575	 take_time:815.1108889579773
+[4/5]	[400/407]	 Loss_D:0.3318076431751251	 Loss_G:5.369154930114746	 D(x):0.8758974075317383	 D(G(z)):0.13958430290222168/0.012124248780310154	 take_time:904.4074091911316
+Generator(
+  (main): Sequential(
+    (0): ConvTranspose2d(100, 512, kernel_size=(4, 4), stride=(1, 1), bias=False)
+    (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): ConvTranspose2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (4): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+    (6): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (7): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): ReLU(inplace=True)
+    (9): ConvTranspose2d(128, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (10): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (11): ReLU(inplace=True)
+    (12): ConvTranspose2d(64, 3, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (13): Tanh()
+  )
+)
+Discriminator(
+  (main): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (1): LeakyReLU(negative_slope=0.2, inplace=True)
+    (2): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (3): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (4): LeakyReLU(negative_slope=0.2, inplace=True)
+    (5): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (6): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (7): LeakyReLU(negative_slope=0.2, inplace=True)
+    (8): Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(512, 1, kernel_size=(4, 4), stride=(1, 1), bias=False)
+    (12): Sigmoid()
+  )
+)
+config:
+n_epochs : 5
+batch_size : 128
+workers : 2
+lr : 0.0002
+b1 : 0.5
+n_cpu : 8
+n_gpu : 1
+latent_z : 100
+img_size : 64
+channels : 3
+G_feature : 64
+D_feature : 64
+fake_label : 0
+real_label : 1
+load_check : False
+Generator(
+  (main): Sequential(
+    (0): ConvTranspose2d(100, 512, kernel_size=(4, 4), stride=(1, 1), bias=False)
+    (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): ConvTranspose2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (4): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+    (6): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (7): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): ReLU(inplace=True)
+    (9): ConvTranspose2d(128, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (10): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (11): ReLU(inplace=True)
+    (12): ConvTranspose2d(64, 3, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (13): Tanh()
+  )
+)
+Discriminator(
+  (main): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (1): LeakyReLU(negative_slope=0.2, inplace=True)
+    (2): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (3): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (4): LeakyReLU(negative_slope=0.2, inplace=True)
+    (5): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (6): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (7): LeakyReLU(negative_slope=0.2, inplace=True)
+    (8): Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(512, 1, kernel_size=(4, 4), stride=(1, 1), bias=False)
+    (12): Sigmoid()
+  )
+)
+config:
+n_epochs : 10
+batch_size : 128
+workers : 2
+lr : 0.0002
+b1 : 0.5
+n_cpu : 8
+n_gpu : 1
+latent_z : 100
+img_size : 64
+channels : 3
+G_feature : 64
+D_feature : 64
+fake_label : 0
+real_label : 1
+load_check : False
+Generator(
+  (main): Sequential(
+    (0): ConvTranspose2d(100, 512, kernel_size=(4, 4), stride=(1, 1), bias=False)
+    (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): ConvTranspose2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (4): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+    (6): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (7): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): ReLU(inplace=True)
+    (9): ConvTranspose2d(128, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (10): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (11): ReLU(inplace=True)
+    (12): ConvTranspose2d(64, 3, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (13): Tanh()
+  )
+)
+Discriminator(
+  (main): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (1): LeakyReLU(negative_slope=0.2, inplace=True)
+    (2): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (3): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (4): LeakyReLU(negative_slope=0.2, inplace=True)
+    (5): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (6): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (7): LeakyReLU(negative_slope=0.2, inplace=True)
+    (8): Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(512, 1, kernel_size=(4, 4), stride=(1, 1), bias=False)
+    (12): Sigmoid()
+  )
+)
+config:
+n_epochs : 10
+batch_size : 128
+workers : 2
+lr : 0.0002
+b1 : 0.5
+n_cpu : 8
+n_gpu : 1
+latent_z : 100
+img_size : 64
+channels : 3
+G_feature : 64
+D_feature : 64
+fake_label : 0
+real_label : 1
+load_check : False
+[0/10]	[0/407]	 Loss_D:1.6962614059448242	 Loss_G:4.978548049926758	 D(x):0.5562324523925781	 D(G(z)):0.5593515634536743/0.01244064699858427	 take_time:12.76168441772461
+Generator(
+  (main): Sequential(
+    (0): ConvTranspose2d(100, 512, kernel_size=(4, 4), stride=(1, 1), bias=False)
+    (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): ConvTranspose2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (4): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+    (6): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (7): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): ReLU(inplace=True)
+    (9): ConvTranspose2d(128, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (10): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (11): ReLU(inplace=True)
+    (12): ConvTranspose2d(64, 3, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (13): Tanh()
+  )
+)
+Discriminator(
+  (main): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (1): LeakyReLU(negative_slope=0.2, inplace=True)
+    (2): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (3): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (4): LeakyReLU(negative_slope=0.2, inplace=True)
+    (5): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (6): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (7): LeakyReLU(negative_slope=0.2, inplace=True)
+    (8): Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(512, 1, kernel_size=(4, 4), stride=(1, 1), bias=False)
+    (12): Sigmoid()
+  )
+)
+config:
+n_epochs : 10
+batch_size : 128
+workers : 2
+lr : 0.0002
+b1 : 0.5
+n_cpu : 8
+n_gpu : 1
+latent_z : 100
+img_size : 64
+channels : 3
+G_feature : 64
+D_feature : 64
+fake_label : 0
+real_label : 1
+load_check : False
+Generator(
+  (main): Sequential(
+    (0): ConvTranspose2d(100, 512, kernel_size=(4, 4), stride=(1, 1), bias=False)
+    (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): ConvTranspose2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (4): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+    (6): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (7): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): ReLU(inplace=True)
+    (9): ConvTranspose2d(128, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (10): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (11): ReLU(inplace=True)
+    (12): ConvTranspose2d(64, 3, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (13): Tanh()
+  )
+)
+Discriminator(
+  (main): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (1): LeakyReLU(negative_slope=0.2, inplace=True)
+    (2): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (3): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (4): LeakyReLU(negative_slope=0.2, inplace=True)
+    (5): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (6): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (7): LeakyReLU(negative_slope=0.2, inplace=True)
+    (8): Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(512, 1, kernel_size=(4, 4), stride=(1, 1), bias=False)
+    (12): Sigmoid()
+  )
+)
+config:
+n_epochs : 10
+batch_size : 128
+workers : 2
+lr : 0.0002
+b1 : 0.5
+n_cpu : 8
+n_gpu : 1
+latent_z : 100
+img_size : 64
+channels : 3
+G_feature : 64
+D_feature : 64
+fake_label : 0
+real_label : 1
+load_check : False
+[0/10]	[0/407]	 Loss_D:1.5970693826675415	 Loss_G:3.6025607585906982	 D(x):0.43271923065185547	 D(G(z)):0.39683952927589417/0.039659518748521805	 take_time:1.4504051208496094
+[0/10]	[200/407]	 Loss_D:0.4343017339706421	 Loss_G:5.884283542633057	 D(x):0.8855232000350952	 D(G(z)):0.13889849185943604/0.004524099640548229	 take_time:82.97564196586609
+[0/10]	[400/407]	 Loss_D:0.8223965764045715	 Loss_G:5.614786148071289	 D(x):0.8584009408950806	 D(G(z)):0.4059606194496155/0.006815789733082056	 take_time:164.7009253501892
+[1/10]	[0/407]	 Loss_D:1.4457125663757324	 Loss_G:5.834555149078369	 D(x):0.8665419816970825	 D(G(z)):0.6513802409172058/0.005267157685011625	 take_time:167.33032131195068
+[1/10]	[200/407]	 Loss_D:0.7462463974952698	 Loss_G:3.7403359413146973	 D(x):0.6472420692443848	 D(G(z)):0.05192001909017563/0.04692798852920532	 take_time:251.37019658088684
+[1/10]	[400/407]	 Loss_D:1.0535712242126465	 Loss_G:5.3416643142700195	 D(x):0.7315409183502197	 D(G(z)):0.39063259959220886/0.017353679984807968	 take_time:338.1028344631195
+[2/10]	[0/407]	 Loss_D:0.7196146845817566	 Loss_G:3.2329583168029785	 D(x):0.6575919985771179	 D(G(z)):0.08727242052555084/0.08523866534233093	 take_time:340.81953144073486
+[2/10]	[200/407]	 Loss_D:0.642896294593811	 Loss_G:3.713466167449951	 D(x):0.6555418372154236	 D(G(z)):0.0678839385509491/0.043030016124248505	 take_time:427.67511892318726
+[2/10]	[400/407]	 Loss_D:1.5552334785461426	 Loss_G:7.418449401855469	 D(x):0.9259617328643799	 D(G(z)):0.6583220958709717/0.001267560524865985	 take_time:514.696117401123
+[3/10]	[0/407]	 Loss_D:0.714136004447937	 Loss_G:2.710958242416382	 D(x):0.7042359113693237	 D(G(z)):0.18097712099552155/0.10336023569107056	 take_time:517.4365673065186
+[3/10]	[200/407]	 Loss_D:0.5141432881355286	 Loss_G:3.0916452407836914	 D(x):0.7181651592254639	 D(G(z)):0.06644608825445175/0.07513654232025146	 take_time:605.4950370788574
+[3/10]	[400/407]	 Loss_D:0.5651981234550476	 Loss_G:5.656344890594482	 D(x):0.8471201658248901	 D(G(z)):0.2669246792793274/0.007763774134218693	 take_time:694.8516476154327
+[4/10]	[0/407]	 Loss_D:0.7229828834533691	 Loss_G:5.940757751464844	 D(x):0.86629319190979	 D(G(z)):0.36063772439956665/0.006259766407310963	 take_time:697.646625995636
+[4/10]	[200/407]	 Loss_D:0.9204713106155396	 Loss_G:4.31118631362915	 D(x):0.5253949165344238	 D(G(z)):0.008563557639718056/0.02779906615614891	 take_time:786.4584491252899
+[4/10]	[400/407]	 Loss_D:0.4473530948162079	 Loss_G:6.000805377960205	 D(x):0.9247418642044067	 D(G(z)):0.248650461435318/0.007603038102388382	 take_time:876.0956273078918
+[5/10]	[0/407]	 Loss_D:0.3004491925239563	 Loss_G:4.419158935546875	 D(x):0.9069904088973999	 D(G(z)):0.15253177285194397/0.026465291157364845	 take_time:878.900356054306
+[5/10]	[200/407]	 Loss_D:0.4520094394683838	 Loss_G:3.7344846725463867	 D(x):0.7637683153152466	 D(G(z)):0.09006890654563904/0.044603634625673294	 take_time:967.9677114486694
+[5/10]	[400/407]	 Loss_D:0.4003790318965912	 Loss_G:4.392651081085205	 D(x):0.8464384078979492	 D(G(z)):0.15402281284332275/0.021133780479431152	 take_time:1056.1674222946167
+[6/10]	[0/407]	 Loss_D:1.9819482564926147	 Loss_G:9.831666946411133	 D(x):0.9671610593795776	 D(G(z)):0.7638968229293823/0.00016326707554981112	 take_time:1058.9544913768768
+[6/10]	[200/407]	 Loss_D:0.9002071619033813	 Loss_G:8.707624435424805	 D(x):0.904327929019928	 D(G(z)):0.4758356809616089/0.0005850367015227675	 take_time:1147.806292295456
+[6/10]	[400/407]	 Loss_D:0.6468178033828735	 Loss_G:7.060659408569336	 D(x):0.9763849973678589	 D(G(z)):0.40401777625083923/0.002465656492859125	 take_time:1237.9239330291748
+[7/10]	[0/407]	 Loss_D:0.5858167409896851	 Loss_G:5.486486911773682	 D(x):0.9232861995697021	 D(G(z)):0.3404994606971741/0.00934936199337244	 take_time:1240.7458035945892
+[7/10]	[200/407]	 Loss_D:0.2198660969734192	 Loss_G:4.220914840698242	 D(x):0.910980761051178	 D(G(z)):0.1022704541683197/0.026702940464019775	 take_time:1328.9360361099243
+[7/10]	[400/407]	 Loss_D:0.2303374707698822	 Loss_G:3.964996099472046	 D(x):0.867843747138977	 D(G(z)):0.05897597223520279/0.0360696017742157	 take_time:1416.9835939407349
+[8/10]	[0/407]	 Loss_D:0.27557897567749023	 Loss_G:3.0179479122161865	 D(x):0.8305031061172485	 D(G(z)):0.052129775285720825/0.08893033862113953	 take_time:1419.7573647499084
+[8/10]	[200/407]	 Loss_D:0.2029806673526764	 Loss_G:3.610917091369629	 D(x):0.8978306651115417	 D(G(z)):0.0749102383852005/0.048605091869831085	 take_time:1507.6794657707214
+[8/10]	[400/407]	 Loss_D:0.2856507897377014	 Loss_G:5.44926643371582	 D(x):0.9517634510993958	 D(G(z)):0.1874188929796219/0.00786169245839119	 take_time:1595.2060890197754
+[9/10]	[0/407]	 Loss_D:1.080675482749939	 Loss_G:3.405217409133911	 D(x):0.44055911898612976	 D(G(z)):0.006663091480731964/0.07714606821537018	 take_time:1597.9784486293793
+[9/10]	[200/407]	 Loss_D:0.3231286108493805	 Loss_G:3.8314290046691895	 D(x):0.773574948310852	 D(G(z)):0.03571036830544472/0.03749685361981392	 take_time:1686.2068750858307
+[9/10]	[400/407]	 Loss_D:0.40715885162353516	 Loss_G:3.5515966415405273	 D(x):0.8316361904144287	 D(G(z)):0.168308824300766/0.04506056755781174	 take_time:1774.923437833786
+Generator(
+  (main): Sequential(
+    (0): ConvTranspose2d(100, 512, kernel_size=(4, 4), stride=(1, 1), bias=False)
+    (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): ConvTranspose2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (4): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+    (6): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (7): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): ReLU(inplace=True)
+    (9): ConvTranspose2d(128, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (10): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (11): ReLU(inplace=True)
+    (12): ConvTranspose2d(64, 3, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (13): Tanh()
+  )
+)
+Discriminator(
+  (main): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (1): LeakyReLU(negative_slope=0.2, inplace=True)
+    (2): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (3): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (4): LeakyReLU(negative_slope=0.2, inplace=True)
+    (5): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (6): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (7): LeakyReLU(negative_slope=0.2, inplace=True)
+    (8): Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(512, 1, kernel_size=(4, 4), stride=(1, 1), bias=False)
+    (12): Sigmoid()
+  )
+)
+config:
+n_epochs : 10
+batch_size : 128
+workers : 2
+lr : 0.0002
+b1 : 0.5
+n_cpu : 8
+n_gpu : 1
+latent_z : 100
+img_size : 64
+channels : 3
+G_feature : 64
+D_feature : 64
+fake_label : 0
+real_label : 1
+load_check : False
+Generator(
+  (main): Sequential(
+    (0): ConvTranspose2d(100, 512, kernel_size=(4, 4), stride=(1, 1), bias=False)
+    (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): ConvTranspose2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (4): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+    (6): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (7): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): ReLU(inplace=True)
+    (9): ConvTranspose2d(128, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (10): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (11): ReLU(inplace=True)
+    (12): ConvTranspose2d(64, 3, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (13): Tanh()
+  )
+)
+Discriminator(
+  (main): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (1): LeakyReLU(negative_slope=0.2, inplace=True)
+    (2): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (3): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (4): LeakyReLU(negative_slope=0.2, inplace=True)
+    (5): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (6): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (7): LeakyReLU(negative_slope=0.2, inplace=True)
+    (8): Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(512, 1, kernel_size=(4, 4), stride=(1, 1), bias=False)
+    (12): Sigmoid()
+  )
+)
+config:
+n_epochs : 15
+batch_size : 128
+workers : 2
+lr : 0.0002
+b1 : 0.5
+n_cpu : 8
+n_gpu : 1
+latent_z : 100
+img_size : 64
+channels : 3
+G_feature : 64
+D_feature : 64
+fake_label : 0
+real_label : 1
+load_check : False
+[0/15]	[0/407]	 Loss_D:1.8604563474655151	 Loss_G:3.8240199089050293	 D(x):0.3825935125350952	 D(G(z)):0.4419965147972107/0.03380721062421799	 take_time:1.5186967849731445
+[0/15]	[200/407]	 Loss_D:1.016863226890564	 Loss_G:6.564388275146484	 D(x):0.7179523706436157	 D(G(z)):0.281510591506958/0.006610225420445204	 take_time:85.08666944503784
+[0/15]	[400/407]	 Loss_D:0.5752031803131104	 Loss_G:3.819960117340088	 D(x):0.7192040681838989	 D(G(z)):0.07502781599760056/0.03683730587363243	 take_time:171.20408987998962
+[1/15]	[0/407]	 Loss_D:0.5197978019714355	 Loss_G:6.3853678703308105	 D(x):0.9272930026054382	 D(G(z)):0.2906692624092102/0.004969267174601555	 take_time:173.84213972091675
+[1/15]	[200/407]	 Loss_D:0.6006035804748535	 Loss_G:2.6816115379333496	 D(x):0.7624608278274536	 D(G(z)):0.18358460068702698/0.1138029620051384	 take_time:261.0663592815399
+[1/15]	[400/407]	 Loss_D:1.1696089506149292	 Loss_G:4.84547233581543	 D(x):0.4797237515449524	 D(G(z)):0.009357132948935032/0.02382800728082657	 take_time:349.1296408176422
+[2/15]	[0/407]	 Loss_D:0.3597263991832733	 Loss_G:4.4909563064575195	 D(x):0.8712248206138611	 D(G(z)):0.15003067255020142/0.018825022503733635	 take_time:351.9293158054352
+[2/15]	[200/407]	 Loss_D:0.538192629814148	 Loss_G:4.892518520355225	 D(x):0.874675989151001	 D(G(z)):0.2628161311149597/0.016930317506194115	 take_time:440.714941740036
+[2/15]	[400/407]	 Loss_D:0.7112134099006653	 Loss_G:2.817415714263916	 D(x):0.6152536273002625	 D(G(z)):0.045595526695251465/0.10472961515188217	 take_time:529.7862606048584
+[3/15]	[0/407]	 Loss_D:0.40627771615982056	 Loss_G:3.9883127212524414	 D(x):0.7636606097221375	 D(G(z)):0.048484839498996735/0.04558298736810684	 take_time:532.5560436248779
+[3/15]	[200/407]	 Loss_D:0.4496428370475769	 Loss_G:6.167018413543701	 D(x):0.716962456703186	 D(G(z)):0.024004854261875153/0.010098429396748543	 take_time:621.2637476921082
+[3/15]	[400/407]	 Loss_D:1.3237336874008179	 Loss_G:5.104123115539551	 D(x):0.43048983812332153	 D(G(z)):0.006617013830691576/0.01696796715259552	 take_time:711.2838051319122
+[4/15]	[0/407]	 Loss_D:0.6866243481636047	 Loss_G:4.5535688400268555	 D(x):0.6423158645629883	 D(G(z)):0.053456760942935944/0.027348820120096207	 take_time:714.1059722900391
+[4/15]	[200/407]	 Loss_D:0.4262465238571167	 Loss_G:5.275026798248291	 D(x):0.8828709721565247	 D(G(z)):0.2214767038822174/0.00962341483682394	 take_time:803.3246502876282
+[4/15]	[400/407]	 Loss_D:0.3225038945674896	 Loss_G:5.812954902648926	 D(x):0.9434546232223511	 D(G(z)):0.1915447860956192/0.009032182395458221	 take_time:893.625447511673
+[5/15]	[0/407]	 Loss_D:0.2598606050014496	 Loss_G:5.583870887756348	 D(x):0.8691185712814331	 D(G(z)):0.06701881438493729/0.01057187095284462	 take_time:896.443817615509
+[5/15]	[200/407]	 Loss_D:1.0198060274124146	 Loss_G:7.713467597961426	 D(x):0.9670374393463135	 D(G(z)):0.5366368293762207/0.0014769029803574085	 take_time:983.9513947963715
+[5/15]	[400/407]	 Loss_D:0.2108330875635147	 Loss_G:4.222723960876465	 D(x):0.8842285871505737	 D(G(z)):0.0657976046204567/0.026175949722528458	 take_time:1073.238035440445
+[6/15]	[0/407]	 Loss_D:1.0798490047454834	 Loss_G:4.0759406089782715	 D(x):0.4565880000591278	 D(G(z)):0.0020607332699000835/0.03888930380344391	 take_time:1076.063505411148
+[6/15]	[200/407]	 Loss_D:0.38318875432014465	 Loss_G:4.956236839294434	 D(x):0.7641540765762329	 D(G(z)):0.03818691521883011/0.02256782539188862	 take_time:1165.1175513267517
+[6/15]	[400/407]	 Loss_D:0.6524869203567505	 Loss_G:6.631627559661865	 D(x):0.8918818235397339	 D(G(z)):0.35915109515190125/0.0032937447540462017	 take_time:1253.097201347351
+[7/15]	[0/407]	 Loss_D:1.516522765159607	 Loss_G:7.604231834411621	 D(x):0.9867339134216309	 D(G(z)):0.6903477907180786/0.0017712233820930123	 take_time:1255.8616740703583
+[7/15]	[200/407]	 Loss_D:0.3043309152126312	 Loss_G:4.092038631439209	 D(x):0.9576069712638855	 D(G(z)):0.19889549911022186/0.030455373227596283	 take_time:1344.3317415714264
+[7/15]	[400/407]	 Loss_D:0.44423606991767883	 Loss_G:4.534083366394043	 D(x):0.9057244062423706	 D(G(z)):0.24286483228206635/0.019533036276698112	 take_time:1434.1427266597748
+[8/15]	[0/407]	 Loss_D:0.5424449443817139	 Loss_G:3.202082395553589	 D(x):0.7491968274116516	 D(G(z)):0.1480124592781067/0.07311367988586426	 take_time:1436.9773743152618
+[8/15]	[200/407]	 Loss_D:0.27380719780921936	 Loss_G:3.338836431503296	 D(x):0.8666244745254517	 D(G(z)):0.09691598266363144/0.06359933316707611	 take_time:1525.9546489715576
+[8/15]	[400/407]	 Loss_D:0.53041672706604	 Loss_G:2.3208084106445312	 D(x):0.6972295045852661	 D(G(z)):0.08580712229013443/0.13263516128063202	 take_time:1614.4902811050415
+[9/15]	[0/407]	 Loss_D:1.1504852771759033	 Loss_G:1.990379810333252	 D(x):0.40281733870506287	 D(G(z)):0.011549861170351505/0.19601848721504211	 take_time:1617.2342026233673
+[9/15]	[200/407]	 Loss_D:0.373780220746994	 Loss_G:3.352595329284668	 D(x):0.8157348036766052	 D(G(z)):0.11568576097488403/0.06321622431278229	 take_time:1705.482364654541
+[9/15]	[400/407]	 Loss_D:0.38543879985809326	 Loss_G:3.73274827003479	 D(x):0.9215128421783447	 D(G(z)):0.23557940125465393/0.03840261325240135	 take_time:1795.318336725235
+[10/15]	[0/407]	 Loss_D:0.3132466673851013	 Loss_G:4.232104778289795	 D(x):0.9299544095993042	 D(G(z)):0.1917484998703003/0.022450236603617668	 take_time:1798.1535127162933
+[10/15]	[200/407]	 Loss_D:0.340021550655365	 Loss_G:3.635535478591919	 D(x):0.8597885966300964	 D(G(z)):0.14338667690753937/0.04001491516828537	 take_time:1886.4063107967377
+[10/15]	[400/407]	 Loss_D:0.5441787242889404	 Loss_G:1.9601914882659912	 D(x):0.6641685962677002	 D(G(z)):0.053685687482357025/0.19483274221420288	 take_time:1974.2043869495392
+[11/15]	[0/407]	 Loss_D:0.3101987838745117	 Loss_G:3.649904251098633	 D(x):0.8569118976593018	 D(G(z)):0.11220613867044449/0.038118042051792145	 take_time:1976.9539639949799
+[11/15]	[200/407]	 Loss_D:0.370578408241272	 Loss_G:2.917555809020996	 D(x):0.8008213639259338	 D(G(z)):0.10378620028495789/0.08074945211410522	 take_time:2065.0595483779907
+[11/15]	[400/407]	 Loss_D:0.43852320313453674	 Loss_G:3.557023525238037	 D(x):0.8282831311225891	 D(G(z)):0.17674514651298523/0.04627431184053421	 take_time:2154.607186317444
+[12/15]	[0/407]	 Loss_D:0.4495798945426941	 Loss_G:3.5874619483947754	 D(x):0.7886447906494141	 D(G(z)):0.14055094122886658/0.048645492643117905	 take_time:2157.432678937912
+[12/15]	[200/407]	 Loss_D:1.2264552116394043	 Loss_G:5.768355846405029	 D(x):0.9522414207458496	 D(G(z)):0.6178259253501892/0.006458350922912359	 take_time:2246.4403903484344
+[12/15]	[400/407]	 Loss_D:0.3352363109588623	 Loss_G:3.7220075130462646	 D(x):0.8764528036117554	 D(G(z)):0.16576339304447174/0.037451617419719696	 take_time:2336.4385113716125
+[13/15]	[0/407]	 Loss_D:0.2806472182273865	 Loss_G:3.9117331504821777	 D(x):0.8176732063293457	 D(G(z)):0.05253675580024719/0.041947923600673676	 take_time:2339.226526737213
+[13/15]	[200/407]	 Loss_D:0.4966980814933777	 Loss_G:4.503170013427734	 D(x):0.9368604421615601	 D(G(z)):0.3184993863105774/0.015452822670340538	 take_time:2426.4479451179504
+[13/15]	[400/407]	 Loss_D:1.9759597778320312	 Loss_G:8.2451171875	 D(x):0.9953607320785522	 D(G(z)):0.8039067983627319/0.0006483622128143907	 take_time:2515.5021255016327
+[14/15]	[0/407]	 Loss_D:0.5977596044540405	 Loss_G:1.9389033317565918	 D(x):0.6998218297958374	 D(G(z)):0.16551563143730164/0.18766015768051147	 take_time:2518.314780473709
+[14/15]	[200/407]	 Loss_D:0.3232854902744293	 Loss_G:2.9489269256591797	 D(x):0.8120086789131165	 D(G(z)):0.08123528212308884/0.07605591416358948	 take_time:2607.3364231586456
+[14/15]	[400/407]	 Loss_D:1.0711930990219116	 Loss_G:5.855100631713867	 D(x):0.974096953868866	 D(G(z)):0.5903915166854858/0.004916758742183447	 take_time:2697.3077430725098
+Generator(
+  (main): Sequential(
+    (0): ConvTranspose2d(100, 512, kernel_size=(4, 4), stride=(1, 1), bias=False)
+    (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): ConvTranspose2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (4): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+    (6): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (7): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): ReLU(inplace=True)
+    (9): ConvTranspose2d(128, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (10): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (11): ReLU(inplace=True)
+    (12): ConvTranspose2d(64, 3, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (13): Tanh()
+  )
+)
+Discriminator(
+  (main): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (1): LeakyReLU(negative_slope=0.2, inplace=True)
+    (2): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (3): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (4): LeakyReLU(negative_slope=0.2, inplace=True)
+    (5): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (6): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (7): LeakyReLU(negative_slope=0.2, inplace=True)
+    (8): Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(512, 1, kernel_size=(4, 4), stride=(1, 1), bias=False)
+    (12): Sigmoid()
+  )
+)
+config:
+n_epochs : 15
+batch_size : 128
+workers : 2
+lr : 0.0002
+b1 : 0.5
+n_cpu : 8
+n_gpu : 1
+latent_z : 100
+img_size : 64
+channels : 3
+G_feature : 64
+D_feature : 64
+fake_label : 0
+real_label : 1
+load_check : False
+Generator(
+  (main): Sequential(
+    (0): ConvTranspose2d(100, 512, kernel_size=(4, 4), stride=(1, 1), bias=False)
+    (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): ConvTranspose2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (4): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+    (6): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (7): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): ReLU(inplace=True)
+    (9): ConvTranspose2d(128, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (10): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (11): ReLU(inplace=True)
+    (12): ConvTranspose2d(64, 3, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (13): Tanh()
+  )
+)
+Discriminator(
+  (main): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (1): LeakyReLU(negative_slope=0.2, inplace=True)
+    (2): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (3): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (4): LeakyReLU(negative_slope=0.2, inplace=True)
+    (5): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (6): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (7): LeakyReLU(negative_slope=0.2, inplace=True)
+    (8): Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(512, 1, kernel_size=(4, 4), stride=(1, 1), bias=False)
+    (12): Sigmoid()
+  )
+)
+config:
+n_epochs : 15
+batch_size : 128
+workers : 2
+lr : 0.0002
+b1 : 0.5
+n_cpu : 8
+n_gpu : 1
+latent_z : 100
+img_size : 64
+channels : 3
+G_feature : 64
+D_feature : 64
+fake_label : 0
+real_label : 1
+load_check : False
+Generator(
+  (main): Sequential(
+    (0): ConvTranspose2d(100, 512, kernel_size=(4, 4), stride=(1, 1), bias=False)
+    (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): ConvTranspose2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (4): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+    (6): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (7): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): ReLU(inplace=True)
+    (9): ConvTranspose2d(128, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (10): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (11): ReLU(inplace=True)
+    (12): ConvTranspose2d(64, 3, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (13): Tanh()
+  )
+)
+Discriminator(
+  (main): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (1): LeakyReLU(negative_slope=0.2, inplace=True)
+    (2): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (3): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (4): LeakyReLU(negative_slope=0.2, inplace=True)
+    (5): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (6): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (7): LeakyReLU(negative_slope=0.2, inplace=True)
+    (8): Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(512, 1, kernel_size=(4, 4), stride=(1, 1), bias=False)
+    (12): Sigmoid()
+  )
+)
+config:
+n_epochs : 15
+batch_size : 128
+workers : 2
+lr : 0.0002
+b1 : 0.5
+n_cpu : 8
+n_gpu : 1
+latent_z : 100
+img_size : 64
+channels : 3
+G_feature : 64
+D_feature : 64
+fake_label : 0
+real_label : 1
+load_check : False
+Generator(
+  (main): Sequential(
+    (0): ConvTranspose2d(100, 512, kernel_size=(4, 4), stride=(1, 1), bias=False)
+    (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): ConvTranspose2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (4): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+    (6): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (7): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): ReLU(inplace=True)
+    (9): ConvTranspose2d(128, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (10): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (11): ReLU(inplace=True)
+    (12): ConvTranspose2d(64, 3, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (13): Tanh()
+  )
+)
+Discriminator(
+  (main): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (1): LeakyReLU(negative_slope=0.2, inplace=True)
+    (2): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (3): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (4): LeakyReLU(negative_slope=0.2, inplace=True)
+    (5): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (6): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (7): LeakyReLU(negative_slope=0.2, inplace=True)
+    (8): Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(512, 1, kernel_size=(4, 4), stride=(1, 1), bias=False)
+    (12): Sigmoid()
+  )
+)
+config:
+n_epochs : 15
+batch_size : 128
+workers : 2
+lr : 0.0002
+b1 : 0.5
+n_cpu : 8
+n_gpu : 1
+latent_z : 100
+img_size : 64
+channels : 3
+G_feature : 64
+D_feature : 64
+fake_label : 0
+real_label : 1
+load_check : False
+Generator(
+  (main): Sequential(
+    (0): ConvTranspose2d(100, 512, kernel_size=(4, 4), stride=(1, 1), bias=False)
+    (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): ConvTranspose2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (4): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+    (6): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (7): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): ReLU(inplace=True)
+    (9): ConvTranspose2d(128, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (10): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (11): ReLU(inplace=True)
+    (12): ConvTranspose2d(64, 3, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (13): Tanh()
+  )
+)
+Discriminator(
+  (main): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (1): LeakyReLU(negative_slope=0.2, inplace=True)
+    (2): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (3): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (4): LeakyReLU(negative_slope=0.2, inplace=True)
+    (5): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (6): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (7): LeakyReLU(negative_slope=0.2, inplace=True)
+    (8): Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(512, 1, kernel_size=(4, 4), stride=(1, 1), bias=False)
+    (12): Sigmoid()
+  )
+)
+config:
+n_epochs : 15
+batch_size : 128
+workers : 2
+lr : 0.0002
+b1 : 0.5
+n_cpu : 8
+n_gpu : 1
+latent_z : 100
+img_size : 64
+channels : 3
+G_feature : 64
+D_feature : 64
+fake_label : 0
+real_label : 1
+load_check : False
